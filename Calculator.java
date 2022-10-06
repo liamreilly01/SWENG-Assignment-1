@@ -9,12 +9,27 @@ public class Calculator {
     public Calculator()
     {
         input = new Scanner(System.in);
-        if(checkString(expression)) {
-        	System.out.print("Yes");
+    }
+
+    public int calculate(String s)
+    {
+        if(!checkString(s))
+        {
+            System.out.println("ERROR: Inavlid String Input");
+            return -1;
         }
-        else {
-        	System.out.print("No");
-        }
+
+        ArrayList<Integer> ints = new ArrayList<Integer>();
+        ArrayList<String> ops = new ArrayList<String>();
+        splitString(ints,ops,s);
+
+
+        return -1;
+    }
+
+    private void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
+    {
+
     }
 
     public static boolean checkString(String s){
