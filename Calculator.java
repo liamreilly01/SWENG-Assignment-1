@@ -3,11 +3,14 @@
  */
 import java.util.*;
 public class Calculator {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String expression = input.nextLine();
 
+    private Scanner input;
+
+    public Calculator()
+    {
+        input = new Scanner(System.in);
     }
+
     public boolean checkString(String s){
         for(int i = 0;i < s.length();i++){
             char c = s.charAt(i);
