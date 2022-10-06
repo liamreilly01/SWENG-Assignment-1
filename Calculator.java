@@ -22,9 +22,38 @@ public class Calculator {
         ArrayList<Integer> ints = new ArrayList<Integer>();
         ArrayList<String> ops = new ArrayList<String>();
         splitString(ints,ops,s);
+        if(ints.size() != (ops.size() + 1))
+        {
+            System.out.println("ERROR: Inavlid Num of ints v Ops");
+            return -1;
+        }
 
+        while(ops.indexOf("*") != -1)
+        {
+            int mulIndex = ops.indexOf("*");
+            int result = ints.get(mulIndex) * ints.get(mulIndex + 1);
 
-        return -1;
+            ops.remove(mulIndex);
+            ints.remove(mulIndex);
+            ints.remove(mulIndex);
+            ints.add(mulIndex, result);
+        }
+
+        int result = ints.get(0);
+        for(int i = 0; i < ops.size(); i++)
+        {
+            char operator = ops.get(i).charAt(0);
+
+            if(operator == '+')
+                result = result + ints.get(i + 1);
+            else if(operator == '-')
+                result = result - ints.get(i + 1);
+            else
+                System.out.println("ERROR: Not an operator");
+                
+        }
+
+        return result;
     }
 
     private void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
