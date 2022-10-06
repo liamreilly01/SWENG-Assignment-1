@@ -4,11 +4,9 @@
 import java.util.*;
 public class Calculator {
 
-    private Scanner input;
-
     public Calculator()
     {
-        input = new Scanner(System.in);
+        System.out.println("Welcome to the Calculator");
     }
 
     public int calculate(String s)
