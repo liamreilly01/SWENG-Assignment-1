@@ -32,19 +32,37 @@ public class Calculator {
 
     }
 
-    public static boolean checkString(String s){
+    public static boolean checkString(String s)
+    {
         char start = s.charAt(0);
         int length = s.length();
         char end = s.charAt(length-1);
-        if(!Character.isDigit(start) || !Character.isDigit(end)){
+
+        if(!Character.isDigit(start) || !Character.isDigit(end))
+        {
             return false;
         }
-        for(int i = 0;i < s.length();i++){
+
+        boolean lastWasOp = false;
+        for(int i = 0; i < length; i++)
+        {
             char c = s.charAt(i);
-            if(Character.isDigit(i) && c != '*' && c != '+' && c!= '-')
-                {
+            if(!Character.isDigit(c) && c != '*' && c != '+' && c!= '-')
+            {
+                return false;
+            }
+
+            if(c == '*' || c == '+' || c == '-')
+            {
+                if(lastWasOp == false)
+                    lastWasOp = true;
+                else
                     return false;
-                }
+            }
+            else
+            {
+                lastWasOp = false;
+            }
             
         }
         return true;
