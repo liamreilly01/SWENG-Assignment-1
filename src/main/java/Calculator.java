@@ -1,3 +1,4 @@
+package src.main.java;
 /**
  * Calculator
  */
@@ -56,29 +57,35 @@ public class Calculator {
 
     private void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
     {
-    	for(int i = 0;i < s.length();i++) {
+    	for(int i = 0;i < s.length();i++) 
+        {
     		char c = s.charAt(i);
-    		if(Character.isDigit(c)) {
-    			int count = 0;
-    			for(int k = i+1;k < s.length();k++) {
-    				char c2 = s.charAt(k);
-    				if(Character.isDigit(c2)) {
-    					count++;
-    				}
+    		if(Character.isDigit(c)) 
+            {
+                int count = 0;
+                for(int k = i+1;k < s.length();k++) 
+                {
+                    char c2 = s.charAt(k);
+                    if(Character.isDigit(c2)) {
+                        count++;
+                    }
                     if(!Character.isDigit(c2)){
                         break;
                     }
                 }
-    				while(count >= 0) {
-    					char c3 = s.charAt(i++);
-    					ints.add(Character.getNumericValue(c3));
-    					count--;
-    				}
-                    if(count == -1){
-                        i--;
-                    }
-    		}
-        else ops.add(Character.toString(c));
+                while(count >= 0) 
+                {
+                    char c3 = s.charAt(i++);
+                    ints.add(Character.getNumericValue(c3));
+                    count--;
+                }
+                if(count == -1)
+                {
+                    i--;
+                }
+             }
+             else ops.add(Character.toString(c));
+        }
     }
 
     public static boolean checkString(String s)
