@@ -74,7 +74,7 @@ public class CalculatorTest
 	public void operatorBeforeNumberTest() {
 		Calculator cal = new Calculator();
 		String expression = "+4+5";
-		String expectedResult = "ERROR: Inavlid String Input";
+		String expectedResult = "ERROR: Invalid String Input";
 		String answerReceived = cal.calculate(expression);
 		Assert.assertEquals(expectedResult, answerReceived);
 	}
