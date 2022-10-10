@@ -79,7 +79,7 @@ public class CalculatorTest {
 	public void NonDigitOrOperatorInputTest() {
 		Calculator cal = new Calculator();
 		String expression = "abc";
-		String answer = "ERROR: Inavlid String Input";
+		String answer = "ERROR: Invalid String Input";
 		String expectedResult = cal.calculate(expression);
 		Assert.assertEquals(expectedResult, answer);
 	}
