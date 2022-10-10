@@ -22,7 +22,7 @@ public class CalculatorTest
 		String expression = "1+2";
 		String expectedResult = "3";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -31,7 +31,7 @@ public class CalculatorTest
 		String expression = "2-1";
 		String expectedResult = "1";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ public class CalculatorTest
 		String expression = "2*2";
 		String expectedResult = "4";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -49,7 +49,7 @@ public class CalculatorTest
 		String expression = "22*10";
 		String expectedResult = "220";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ public class CalculatorTest
 		String expression = "22-20";
 		String expectedResult = "2";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class CalculatorTest
 		String expression = "435+56";
 		String expectedResult = "491";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -76,7 +76,7 @@ public class CalculatorTest
 		String expression = "+4+5";
 		String expectedResult = "ERROR: Inavlid String Input";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class CalculatorTest
 		String expression = "5";
 		String expectedResult = "5";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 
 	@Test
@@ -94,7 +94,7 @@ public class CalculatorTest
 		String expression = "1+2*3+4*5-20+1";
 		String expectedResult = "8";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 	
 	@Test
@@ -103,6 +103,6 @@ public class CalculatorTest
 		String expression = "abc";
 		String expectedResult = "ERROR: Invalid String Input";
 		String answerReceived = cal.calculate(expression);
-		Assert.assertEquals(expectedResult, answerReceived);
+		Assert.assertEquals(answerReceived, expectedResult);
 	}
 }
