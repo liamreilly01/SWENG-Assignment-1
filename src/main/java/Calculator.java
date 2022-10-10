@@ -16,7 +16,7 @@ public class Calculator {
         if(!checkString(s))
         {
             System.out.println("ERROR: Invalid String Input");
-            return "ERROR: Inavlid String Input";
+            return "ERROR: Invalid String Input";
         }
 
         ArrayList<Integer> ints = new ArrayList<Integer>();
