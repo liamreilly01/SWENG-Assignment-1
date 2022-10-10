@@ -1,4 +1,5 @@
-package src.test.java;
+package src;
+
 import org.junit.Test;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
