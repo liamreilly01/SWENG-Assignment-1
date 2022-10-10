@@ -30,7 +30,7 @@ public class Calculator {
         while(ops.indexOf("*") != -1)
         {
             int mulIndex = ops.indexOf("*");
-            int result = ints.get(mulIndex) * ints.get(mulIndex + 1);
+            int result = ints.get(mudlIndex) * ints.get(mulIndex + 1);
 
             ops.remove(mulIndex);
             ints.remove(mulIndex);
