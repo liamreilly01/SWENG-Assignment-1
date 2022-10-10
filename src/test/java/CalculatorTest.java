@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import src.main.java.Calculator;
+
 @RunWith(JUnit4.class)
 public class CalculatorTest 
 {
