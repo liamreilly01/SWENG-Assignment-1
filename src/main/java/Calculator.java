@@ -10,12 +10,12 @@ public class Calculator {
         System.out.println("Welcome to the Calculator");
     }
 
-    public int calculate(String s)
+    public String calculate(String s)
     {
         if(!checkString(s))
         {
             System.out.println("ERROR: Inavlid String Input");
-            return -1;
+            return "";
         }
 
         ArrayList<Integer> ints = new ArrayList<Integer>();
@@ -24,7 +24,7 @@ public class Calculator {
         if(ints.size() != (ops.size() + 1))
         {
             System.out.println("ERROR: Inavlid Num of ints v Ops");
-            return -1;
+            return "";
         }
 
         while(ops.indexOf("*") != -1)
@@ -48,11 +48,14 @@ public class Calculator {
             else if(operator == '-')
                 result = result - ints.get(i + 1);
             else
+            {
                 System.out.println("ERROR: Not an operator");
+                return "";
+            }
                 
         }
 
-        return result;
+        return Integer.toString(result);
     }
 
     private void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
