@@ -1,7 +1,17 @@
 package src.test.java;
 import org.junit.Test;
 import org.junit.Assert;
-public class CalculatorTest {
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class CalculatorTest 
+{
+	@Test
+	public void testConstructor()
+	{
+		new Calculator();
+	}
 
 	@Test
 	public void addWithOneDigitWidthTest() {
@@ -71,6 +81,15 @@ public class CalculatorTest {
 		Calculator cal = new Calculator();
 		String expression = "5";
 		String answer = "5";
+		String expectedResult = cal.calculate(expression);
+		Assert.assertEquals(expectedResult, answer);
+	}
+
+	@Test
+	public void LongInputTest() {
+		Calculator cal = new Calculator();
+		String expression = "1+2*3+4*5-20+1";
+		String answer = "8";
 		String expectedResult = cal.calculate(expression);
 		Assert.assertEquals(expectedResult, answer);
 	}
