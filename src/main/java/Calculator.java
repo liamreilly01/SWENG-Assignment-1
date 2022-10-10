@@ -15,7 +15,7 @@ public class Calculator {
     {
         if(!checkString(s))
         {
-            System.out.println("ERROR: Inavlid String Input");
+            System.out.println("ERROR: Invalid String Input");
             return "ERROR: Inavlid String Input";
         }
 
@@ -86,10 +86,9 @@ public class Calculator {
                         i--;
                     }
     		}
-        else ops.add(Character.toString(c));
+            else ops.add(Character.toString(c));
+        }
     }
-}
-
 
     public static boolean checkString(String s)
     {
