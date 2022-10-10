@@ -16,7 +16,7 @@ public class Calculator {
         if(!checkString(s))
         {
             System.out.println("ERROR: Inavlid String Input");
-            return "";
+            return "ERROR: Inavlid String Input";
         }
 
         ArrayList<Integer> ints = new ArrayList<Integer>();
@@ -24,8 +24,8 @@ public class Calculator {
         splitString(ints,ops,s);
         if(ints.size() != (ops.size() + 1))
         {
-            System.out.println("ERROR: Inavlid Num of ints v Ops");
-            return "";
+            System.out.println("ERROR: Invalid Num of ints v Ops");
+            return "ERROR: Invalid Num of ints v Ops";
         }
 
         while(ops.indexOf("*") != -1)
@@ -51,7 +51,7 @@ public class Calculator {
             else
             {
                 System.out.println("ERROR: Not an operator");
-                return "";
+                return "ERROR: Not an operator";
             }
                 
         }
