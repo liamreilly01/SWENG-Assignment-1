@@ -1,4 +1,5 @@
 package src.main.java;
+
 /**
  * Calculator
  */
@@ -14,8 +15,8 @@ public class Calculator {
     {
         if(!checkString(s))
         {
-            System.out.println("ERROR: Inavlid String Input");
-            return "";
+            System.out.println("ERROR: Invalid String Input");
+            return "ERROR: Invalid String Input";
         }
 
         ArrayList<Integer> ints = new ArrayList<Integer>();
@@ -23,8 +24,8 @@ public class Calculator {
         splitString(ints,ops,s);
         if(ints.size() != (ops.size() + 1))
         {
-            System.out.println("ERROR: Inavlid Num of ints v Ops");
-            return "";
+            System.out.println("ERROR: Invalid Num of ints v Ops");
+            return "ERROR: Invalid Num of ints v Ops";
         }
 
         while(ops.indexOf("*") != -1)
@@ -50,7 +51,7 @@ public class Calculator {
             else
             {
                 System.out.println("ERROR: Not an operator");
-                return "";
+                return "ERROR: Not an operator";
             }
                 
         }
@@ -58,36 +59,34 @@ public class Calculator {
         return Integer.toString(result);
     }
 
-    private void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
+    private static void splitString(ArrayList<Integer> ints, ArrayList<String> ops, String s)
     {
-    	for(int i = 0;i < s.length();i++) 
-        {
+    	for(int i = 0;i < s.length();i++) {
     		char c = s.charAt(i);
-    		if(Character.isDigit(c)) 
-            {
-                int count = 0;
-                for(int k = i+1;k < s.length();k++) 
-                {
-                    char c2 = s.charAt(k);
-                    if(Character.isDigit(c2)) {
-                        count++;
-                    }
+    		if(Character.isDigit(c)) {
+    			int count = 0;
+    			for(int k = i+1;k < s.length();k++) {
+    				char c2 = s.charAt(k);
+    				if(Character.isDigit(c2)) {
+    					count++;
+    				}
                     if(!Character.isDigit(c2)){
                         break;
                     }
                 }
-                while(count >= 0) 
-                {
-                    char c3 = s.charAt(i++);
-                    ints.add(Character.getNumericValue(c3));
-                    count--;
-                }
-                if(count == -1)
-                {
-                    i--;
-                }
-             }
-             else ops.add(Character.toString(c));
+                String s2 = "";
+    				while(count >= 0) {
+    					char c3 = s.charAt(i++);
+                        s2 = s2 + c3;
+    					//ints.add(Character.getNumericValue(c3));
+    					count--;
+    				}
+                    ints.add(Integer.parseInt(s2));
+                    if(count == -1){
+                        i--;
+                    }
+    		}
+            else ops.add(Character.toString(c));
         }
     }
 
